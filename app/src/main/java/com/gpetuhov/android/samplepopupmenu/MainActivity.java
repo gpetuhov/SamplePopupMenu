@@ -6,6 +6,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.PopupMenu;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,10 +19,8 @@ public class MainActivity extends AppCompatActivity {
     button.setOnClickListener(v -> {
       PopupMenu popupMenu = new PopupMenu(MainActivity.this, button);
       popupMenu.setOnMenuItemClickListener(item -> {
-        int itemId = item.getItemId();
-
+        Toast.makeText(MainActivity.this, "Click on " + item.getTitle(), Toast.LENGTH_SHORT).show();
         return true;
-
       });
 
       MenuInflater inflater = popupMenu.getMenuInflater();
